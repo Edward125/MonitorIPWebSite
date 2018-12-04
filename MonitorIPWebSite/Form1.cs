@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Edward;
 using System.Net;
+using System.IO;
 
 namespace MonitorIPWebSite
 {
@@ -22,6 +23,8 @@ namespace MonitorIPWebSite
 
 
         public static bool IsRun = false;
+        public static string AppFolder = Application.StartupPath + @"\Monitor";
+        public static string LogFolder = AppFolder + @"\Log";
 
         #endregion
 
@@ -29,42 +32,80 @@ namespace MonitorIPWebSite
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Text = "Monitor IP & WebSite,Ver:" + Application.ProductVersion;
+            CreateFolder();
         }
 
         private void btnGo_Click(object sender, EventArgs e)
         {
 
             if (!IsRun)
+            {
                 btnGo.Text = "Stop";
+                txtIP1.ReadOnly = true;
+                txtWeb1.ReadOnly = true;
+                txtIP2.ReadOnly = true;
+                txtWeb2.ReadOnly = true;
+            }
             else
+            {
                 btnGo.Text = "Start";
+                txtIP1.ReadOnly = false;
+                txtWeb1.ReadOnly = false;
+                txtIP2.ReadOnly = false;
+                txtWeb2.ReadOnly = false;
+            }
 
             IsRun = !IsRun;
 
             while (IsRun)
             {
                 string result = "";
-                
-                if (Other.pingIp (txtIP1.Text.Trim ()))
-                    UpdateInfo (lstInfo,"Ping " +txtIP1.Text +" 成功.");
+
+                if (Other.pingIp(txtIP1.Text.Trim()))
+                {
+                    UpdateInfo(lstInfo, "Ping " + txtIP1.Text + " 成功.");
+                    WriteLog("Ping " + txtIP1.Text + " 成功.");
+                }
                 else
+                {
                     UpdateInfo(lstInfo, "Ping " + txtIP1.Text + " 失败.");
+                    WriteLog("Ping " + txtIP1.Text + " 失败.");
+                }
 
                 if (Other.pingIp(txtIP2.Text.Trim()))
+                {
                     UpdateInfo(lstInfo, "Ping " + txtIP2.Text + " 成功.");
+                    WriteLog("Ping " + txtIP2.Text + " 成功.");
+                }
                 else
+                {
                     UpdateInfo(lstInfo, "Ping " + txtIP2.Text + " 失败.");
+                    WriteLog ("Ping " + txtIP2.Text + " 失败.");
+                }
+
 
                 if (CheckUrlVisit(txtWeb1.Text.Trim(), out result))
+                {
                     UpdateInfo(lstInfo, txtWeb1.Text + "访问成功.");
+                    WriteLog(txtWeb1.Text + "访问成功.");
+                }
                 else
-                    UpdateInfo(lstInfo, txtWeb1.Text + "访问失败."+ result);
+                {
+                    UpdateInfo(lstInfo, txtWeb1.Text + "访问失败." + result);
+                    WriteLog(txtWeb1.Text + "访问失败." + result);
+                }
 
                 result = "";
                 if (CheckUrlVisit(txtWeb2.Text.Trim(), out result))
+                {
                     UpdateInfo(lstInfo, txtWeb2.Text + "访问成功.");
+                    WriteLog(txtWeb2.Text + "访问成功.");
+                }
                 else
+                {
                     UpdateInfo(lstInfo, txtWeb2.Text + "访问失败." + result);
+                    WriteLog(txtWeb2.Text + "访问失败." + result);
+                }
 
 
 
@@ -172,6 +213,46 @@ namespace MonitorIPWebSite
 
             return false;
 
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (IsRun)
+                e.Cancel = true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="log"></param>
+        public static void WriteLog(string log)
+        {
+            string logfile = LogFolder + @"\" + DateTime.Now.ToString("yyyyMMdd") + ".log";
+            try
+            {
+                StreamWriter sw = new StreamWriter(logfile, true);
+                log = DateTime.Now.ToString("hh:mm:ss") + "->" + log;
+                sw.WriteLine(log);
+                sw.Close();
+            }
+            catch (Exception)
+            {
+
+                //throw;
+            }
+
+
+        }
+
+                /// <summary>
+        /// 
+        /// </summary>
+        public static void CreateFolder()
+        {
+            if (!Directory.Exists(AppFolder))
+                Directory.CreateDirectory(AppFolder);
+            if (!Directory.Exists(LogFolder))
+                Directory.CreateDirectory(LogFolder);
         }
 
     }
