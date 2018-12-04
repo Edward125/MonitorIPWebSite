@@ -1,0 +1,16 @@
+c:\users\administrator\documents\visual studio 2012\Projects\MonitorIPWebSite\MonitorIPWebSite\bin\Debug\MonitorIPWebSite.exe
+c:\users\administrator\documents\visual studio 2012\Projects\MonitorIPWebSite\MonitorIPWebSite\bin\Debug\MonitorIPWebSite.pdb
+c:\users\administrator\documents\visual studio 2012\Projects\MonitorIPWebSite\MonitorIPWebSite\obj\Debug\MonitorIPWebSite.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2012\Projects\MonitorIPWebSite\MonitorIPWebSite\obj\Debug\MonitorIPWebSite.Form1.resources
+c:\users\administrator\documents\visual studio 2012\Projects\MonitorIPWebSite\MonitorIPWebSite\obj\Debug\MonitorIPWebSite.Properties.Resources.resources
+c:\users\administrator\documents\visual studio 2012\Projects\MonitorIPWebSite\MonitorIPWebSite\obj\Debug\MonitorIPWebSite.csproj.GenerateResource.Cache
+c:\users\administrator\documents\visual studio 2012\Projects\MonitorIPWebSite\MonitorIPWebSite\obj\Debug\MonitorIPWebSite.exe
+c:\users\administrator\documents\visual studio 2012\Projects\MonitorIPWebSite\MonitorIPWebSite\obj\Debug\MonitorIPWebSite.pdb
+E:\Edward\Code\MonitorIPWebSite\MonitorIPWebSite\obj\Debug\MonitorIPWebSite.exe
+E:\Edward\Code\MonitorIPWebSite\MonitorIPWebSite\obj\Debug\MonitorIPWebSite.pdb
+E:\Edward\Code\MonitorIPWebSite\MonitorIPWebSite\bin\Debug\MonitorIPWebSite.exe
+E:\Edward\Code\MonitorIPWebSite\MonitorIPWebSite\bin\Debug\MonitorIPWebSite.pdb
+E:\Edward\Code\MonitorIPWebSite\MonitorIPWebSite\obj\Debug\MonitorIPWebSite.csprojResolveAssemblyReference.cache
+E:\Edward\Code\MonitorIPWebSite\MonitorIPWebSite\obj\Debug\MonitorIPWebSite.Form1.resources
+E:\Edward\Code\MonitorIPWebSite\MonitorIPWebSite\obj\Debug\MonitorIPWebSite.Properties.Resources.resources
+E:\Edward\Code\MonitorIPWebSite\MonitorIPWebSite\obj\Debug\MonitorIPWebSite.csproj.GenerateResource.Cache
