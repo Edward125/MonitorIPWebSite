@@ -13,3 +13,4 @@ E:\Edward\Code\MonitorIPWebSite\MonitorIPWebSite\bin\Debug\MonitorIPWebSite.pdb
 E:\Edward\Code\MonitorIPWebSite\MonitorIPWebSite\obj\Debug\MonitorIPWebSite.Form1.resources
 E:\Edward\Code\MonitorIPWebSite\MonitorIPWebSite\obj\Debug\MonitorIPWebSite.Properties.Resources.resources
 E:\Edward\Code\MonitorIPWebSite\MonitorIPWebSite\obj\Debug\MonitorIPWebSite.csproj.GenerateResource.Cache
+E:\Edward\Code\MonitorIPWebSite\MonitorIPWebSite\obj\Debug\MonitorIPWebSite.csprojResolveAssemblyReference.cache

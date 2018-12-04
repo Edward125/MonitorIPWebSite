@@ -108,9 +108,6 @@ namespace MonitorIPWebSite
                 }
 
 
-
-
-
                 Delay(5000);
 
             }
@@ -231,7 +228,7 @@ namespace MonitorIPWebSite
             try
             {
                 StreamWriter sw = new StreamWriter(logfile, true);
-                log = DateTime.Now.ToString("hh:mm:ss") + "->" + log;
+                log = DateTime.Now.ToString("HH:mm:ss") + "->" + log;
                 sw.WriteLine(log);
                 sw.Close();
             }
